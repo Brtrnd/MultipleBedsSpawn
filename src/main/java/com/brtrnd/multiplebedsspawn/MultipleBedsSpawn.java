@@ -23,31 +23,35 @@ public class MultipleBedsSpawn extends JavaPlugin {
     public void onEnable() {
         instance = this;
 
+        // Init config
         saveDefaultConfig();
-
         configManager = new ConfigManager(this);
+
+        // Init storage
         storage = new BedStorage(this);
+
+        // Init manager
         bedManager = new BedManager(configManager, storage);
 
-        storage.load();
+        // Load stored data
+        bedManager.load(storage.load());
 
+        // Register listeners
         getServer().getPluginManager().registerEvents(
-                new BedEnterListener(bedManager), this
-        );
+                new BedEnterListener(bedManager), this);
+        getServer().getPluginManager().registerEvents(
+                new RespawnListener(bedManager), this);
 
-        getServer().getPluginManager().registerEvents(
-                new RespawnListener(bedManager, configManager), this
-        );
-                
+        // Register command
         getCommand("multibeds").setExecutor(
-                new MultibedsCommand(bedManager)
-        );
-
+                new MultibedsCommand(bedManager));
     }
 
     @Override
     public void onDisable() {
-        storage.save();
+        if (storage != null) {
+            storage.save();
+        }
     }
 
     public static MultipleBedsSpawn getInstance() {
@@ -58,4 +62,3 @@ public class MultipleBedsSpawn extends JavaPlugin {
         return bedManager;
     }
 }
-``

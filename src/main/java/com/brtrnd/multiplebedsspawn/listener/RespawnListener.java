@@ -2,10 +2,10 @@ package com.brtrnd.multiplebedsspawn.listener;
 
 import com.brtrnd.multiplebedsspawn.manager.BedManager;
 import org.bukkit.Location;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerRespawnEvent;
-import com.brtrnd.multiplebedsspawn.util.DebugLogger;
 
 /**
  * Overrides respawn logic.
@@ -14,31 +14,26 @@ public class RespawnListener implements Listener {
 
     private final BedManager bedManager;
 
-    public RespawnListener(BedManager bedManager,
-                           com.brtrnd.multiplebedsspawn.manager.ConfigManager config) {
+    /**
+     * Constructor injecting BedManager
+     */
+    public RespawnListener(BedManager bedManager) {
         this.bedManager = bedManager;
     }
 
+    /**
+     * Modify respawn location after death
+     */
     @EventHandler
     public void onRespawn(PlayerRespawnEvent event) {
 
-        if (!event.getPlayer().hasPermission("MultipleBedsSpawn")) return;
-                
-        DebugLogger.log("Respawn check for " + event.getPlayer().getName());
+        Player player = event.getPlayer();
 
-        if (loc != null) {
-            DebugLogger.log("Respawning at " + loc);
-        } else {
-            DebugLogger.log("No valid beds found, using world spawn");
-        }
+        // Get best valid bed
+        Location respawn = bedManager.getValidRespawn(player.getUniqueId());
 
-        Location loc = bedManager.getValidRespawn(
-                event.getPlayer().getUniqueId()
-        );
-
-        if (loc != null) {
-            event.setRespawnLocation(loc);
+        if (respawn != null) {
+            event.setRespawnLocation(respawn);
         }
     }
 }
-``

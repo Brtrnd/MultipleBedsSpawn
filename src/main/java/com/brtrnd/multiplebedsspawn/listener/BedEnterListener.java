@@ -1,6 +1,8 @@
 package com.brtrnd.multiplebedsspawn.listener;
 
 import com.brtrnd.multiplebedsspawn.manager.BedManager;
+import org.bukkit.Location;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBedEnterEvent;
@@ -12,21 +14,29 @@ public class BedEnterListener implements Listener {
 
     private final BedManager bedManager;
 
+    /**
+     * Constructor injecting BedManager dependency
+     */
     public BedEnterListener(BedManager bedManager) {
         this.bedManager = bedManager;
     }
 
+    /**
+     * Fires when player attempts to enter a bed
+     */
     @EventHandler
     public void onBedEnter(PlayerBedEnterEvent event) {
-
-        if (!event.getPlayer().hasPermission("MultipleBedsSpawn")) return;
-
-        if (event.getBedEnterResult() != PlayerBedEnterEvent.BedEnterResult.OK)
+        // Only register successful sleeps
+        if (event.getBedEnterResult() != PlayerBedEnterEvent.BedEnterResult.OK) {
             return;
+        }
 
-        bedManager.addBed(
-                event.getPlayer().getUniqueId(),
-                event.getBed().getLocation()
-        );
+        Player player = event.getPlayer();
+
+        // Bed block location
+        Location bedLocation = event.getBed().getLocation();
+
+        // Store bed in manager
+        bedManager.addBed(player.getUniqueId(), bedLocation);
     }
 }

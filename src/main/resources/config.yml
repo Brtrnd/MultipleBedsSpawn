@@ -1,0 +1,7 @@
+default-bed-count: 4
+auto-save: true
+save-interval: 300
+
+
+# Enable debug logging
+debug: false

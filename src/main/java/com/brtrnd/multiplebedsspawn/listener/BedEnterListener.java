@@ -1,6 +1,6 @@
-package com.Brtrnd.multiplebedsspawn.listener;
+package com.brtrnd.multiplebedsspawn.listener;
 
-import com.Brtrnd.multiplebedsspawn.manager.BedManager;
+import com.brtrnd.multiplebedsspawn.manager.BedManager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBedEnterEvent;

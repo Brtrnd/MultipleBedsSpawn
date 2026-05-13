@@ -1,11 +1,11 @@
-package com.Brtrnd.multiplebedsspawn;
+package com.brtrnd.multiplebedsspawn;
 
-import com.Brtrnd.multiplebedsspawn.listener.BedEnterListener;
-import com.Brtrnd.multiplebedsspawn.listener.RespawnListener;
-import com.Brtrnd.multiplebedsspawn.manager.BedManager;
-import com.Brtrnd.multiplebedsspawn.manager.ConfigManager;
-import com.Brtrnd.multiplebedsspawn.storage.BedStorage;
-import com.Brtrnd.multiplebedsspawn.command.MultibedsCommand;
+import com.brtrnd.multiplebedsspawn.listener.BedEnterListener;
+import com.brtrnd.multiplebedsspawn.listener.RespawnListener;
+import com.brtrnd.multiplebedsspawn.manager.BedManager;
+import com.brtrnd.multiplebedsspawn.manager.ConfigManager;
+import com.brtrnd.multiplebedsspawn.storage.BedStorage;
+import com.brtrnd.multiplebedsspawn.command.MultibedsCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**

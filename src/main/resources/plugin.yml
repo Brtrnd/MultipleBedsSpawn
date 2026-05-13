@@ -1,6 +1,6 @@
 name: MultipleBedsSpawn
 version: 1.0
-main: com.Brtrnd.multiplebedsspawn.MultipleBedsSpawn
+main: com.brtrnd.multiplebedsspawn.MultipleBedsSpawn
 api-version: 1.20
 
 

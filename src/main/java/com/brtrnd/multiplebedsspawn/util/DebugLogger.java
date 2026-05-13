@@ -1,6 +1,6 @@
-package com.Brtrnd.multiplebedsspawn.util;
+package com.brtrnd.multiplebedsspawn.util;
 
-import com.Brtrnd.multiplebedsspawn.MultipleBedsSpawn;
+import com.brtrnd.multiplebedsspawn.MultipleBedsSpawn;
 
 /**
  * Simple debug logger wrapper.

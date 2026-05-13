@@ -1,11 +1,11 @@
-package com.Brtrnd.multiplebedsspawn.listener;
+package com.brtrnd.multiplebedsspawn.listener;
 
-import com.Brtrnd.multiplebedsspawn.manager.BedManager;
+import com.brtrnd.multiplebedsspawn.manager.BedManager;
 import org.bukkit.Location;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerRespawnEvent;
-import com.Brtrnd.multiplebedsspawn.util.DebugLogger;
+import com.brtrnd.multiplebedsspawn.util.DebugLogger;
 
 /**
  * Overrides respawn logic.
@@ -15,7 +15,7 @@ public class RespawnListener implements Listener {
     private final BedManager bedManager;
 
     public RespawnListener(BedManager bedManager,
-                           com.Brtrnd.multiplebedsspawn.manager.ConfigManager config) {
+                           com.brtrnd.multiplebedsspawn.manager.ConfigManager config) {
         this.bedManager = bedManager;
     }
 

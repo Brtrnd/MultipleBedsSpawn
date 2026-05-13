@@ -1,6 +1,6 @@
-package com.Brtrnd.multiplebedsspawn.storage;
+package com.brtrnd.multiplebedsspawn.storage;
 
-import com.Brtrnd.multiplebedsspawn.MultipleBedsSpawn;
+import com.brtrnd.multiplebedsspawn.MultipleBedsSpawn;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;

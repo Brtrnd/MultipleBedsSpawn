@@ -1,6 +1,6 @@
-package com.Brtrnd.multiplebedsspawn.command;
+package com.brtrnd.multiplebedsspawn.command;
 
-import com.Brtrnd.multiplebedsspawn.manager.BedManager;
+import com.brtrnd.multiplebedsspawn.manager.BedManager;
 import org.bukkit.Location;
 import org.bukkit.command.*;
 import org.bukkit.entity.Player;

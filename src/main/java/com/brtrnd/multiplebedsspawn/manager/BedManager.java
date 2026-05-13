@@ -1,10 +1,10 @@
-package com.Brtrnd.multiplebedsspawn.manager;
+package com.brtrnd.multiplebedsspawn.manager;
 
-import com.Brtrnd.multiplebedsspawn.storage.BedStorage;
+import com.brtrnd.multiplebedsspawn.storage.BedStorage;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.type.Bed;
-import com.Brtrnd.multiplebedsspawn.util.DebugLogger;
+import com.brtrnd.multiplebedsspawn.util.DebugLogger;
 
 import java.util.*;
 
